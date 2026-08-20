@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}Vault{% endblock %}</title>
+  <style>
+    body { max-width: 760px; margin: 3rem auto; padding: 0 1rem; font: 16px/1.5 system-ui, sans-serif; color: #1f2937; }
+    nav { display: flex; gap: 1rem; margin-bottom: 2.5rem; padding-bottom: 1rem; border-bottom: 1px solid #e5e7eb; }
+    a { color: #2563eb; } input { box-sizing: border-box; width: 100%; padding: .65rem; margin: .35rem 0 1rem; }
+    button { padding: .65rem 1rem; border: 0; border-radius: 4px; background: #2563eb; color: white; cursor: pointer; }
+    .card { border: 1px solid #e5e7eb; border-radius: 8px; padding: 1.25rem; } code { background: #f3f4f6; padding: .1rem .3rem; }
+    .error { color: #b91c1c; }
+  </style>
+</head>
+<body>
+  <nav><a href="{{ url_for('view_documents') }}">Shared documents</a><a href="{{ url_for('login') }}">Sign in</a><a href="{{ url_for('admin') }}">Admin</a><a href="{{ url_for('logout') }}">Sign out</a></nav>
+  {% block content %}{% endblock %}
+</body>
+</html>

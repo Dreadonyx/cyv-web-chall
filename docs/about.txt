@@ -1,0 +1,4 @@
+About Vault
+===========
+
+Vault is an internal document-sharing portal for team collaboration.

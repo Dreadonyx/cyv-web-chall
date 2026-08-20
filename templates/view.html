@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}{% if logged_in %}User dashboard{% else %}Shared documents{% endif %} | Vault{% endblock %}
+{% block content %}
+{% if logged_in %}
+<h1>Vault dashboard</h1>
+<p>Signed in as <strong>user</strong>.</p>
+{% else %}
+<h1>Shared documents</h1>
+<p>Browse material shared with your team.</p>
+{% endif %}
+<!-- TODO: ensure the internal app.conf is not exposed in config before production -->
+<div class="card">
+  <h2>Shared documents</h2>
+  <ul>
+  {% for document in documents %}
+    <li><a href="{{ url_for('view_documents', file=document) }}">{{ document }}</a></li>
+  {% endfor %}
+  </ul>
+</div>
+{% endblock %}

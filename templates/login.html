@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}Sign in | Vault{% endblock %}
+{% block content %}
+<h1>Vault sign in</h1>
+<div class="card">
+  <p>Demo account: <code>user</code> / <code>user@123</code></p>
+  {% if error %}<p class="error">{{ error }}</p>{% endif %}
+  <form method="post">
+    <label>Username</label><input name="username" required autocomplete="username">
+    <label>Password</label><input type="password" name="password" required autocomplete="current-password">
+    <button type="submit">Sign in</button>
+  </form>
+</div>
+{% endblock %}
